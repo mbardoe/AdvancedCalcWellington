@@ -12,6 +12,7 @@ class Renderer:
         print("Version 2 Markdown Render")
         self.home_directory = Path(home_directory).resolve()
         self.script_dir = Path(__file__).resolve().parent
+        print(self.home_directory)
 
     def render(self):
         #os.chdir(self.home_directory)
@@ -21,8 +22,8 @@ class Renderer:
         ######################
         my_directories = [d for d in self.home_directory.iterdir() if d.is_dir()]
         pdf_directories = [d for d in my_directories if (d / "pdf").exists()]
-
-        # print(pdf_directory)
+        print(my_directories)
+        print(pdf_directories)
         ####################
         # Go through those directories and find all the .md files and then create the pdf
         ####################
